@@ -14,8 +14,6 @@ type ServerConfig = {
 
 export const createGraphQLServer = async (config: ServerConfig) => {
     const app = express();
-    // app.use(express.json({ limit: "5mb" }));
-    // app.use(express.text({ limit: "5mb" }));
     app.use(cors());
     const httpServer = new http.Server(app);
 

@@ -1,6 +1,16 @@
 import { sharedResolver, sharedSchema, createGraphQLServer } from "@fivestars/shared";
-import { schema } from "./app/schema";
-import { resolvers } from "./app/resolvers";
+
+export const schema = /* GraphQL */`
+  type Query {
+      foo: String!
+  }
+`
+
+export const resolvers = {
+  Query: {
+    foo: () => 'bar'
+  }
+}
 
 const port = +(process.env.PORT || 4000);
 
